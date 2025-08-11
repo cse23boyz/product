@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aurora Pro Wireless Headphones | Premium Audio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #3a86ff;
+            --secondary: #8338ec;
+            --dark: #212529;
+            --light: #f8f9fa;
+            --gray: #6c757d;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        
+        .logo {
+            font-size: 30px;
+            font-weight: 700;
+            color: rgb(255, 166, 0)
+        }
+        
+        .logo img {
+            width: 50px;
+            height: 50px; 
+            vertical-align: middle;
+        }
+        .product-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+        
+        .product-gallery {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .main-image {
+            width: 100%;
+            height: 400px;
+            object-fit: contain;
+            margin-bottom: 10px;
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        
+        .thumbnail-container {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .thumbnail {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            cursor: pointer;
+            border-radius: 4px;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+            background-color: white;
+            padding: 5px;
+        }
+        
+        .thumbnail:hover, .thumbnail.active {
+            border-color: var(--primary);
+        }
+        
+        .product-info {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .product-title {
+            font-size: 32px;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        .product-brand {
+            color: var(--gray);
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
+        
+        .product-price {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+        
+        .product-rating {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .stars {
+            color: #ffc107;
+            margin-right: 10px;
+        }
+        
+        .review-count {
+            color: var(--gray);
+            font-size: 14px;
+        }
+        
+        .product-description {
+            margin-bottom: 25px;
+            color: #495057;
+        }
+        
+        .features-list {
+            margin-bottom: 25px;
+        }
+        
+        .features-list li {
+            margin-bottom: 8px;
+            list-style-type: none;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .features-list li:before {
+            content: "\f00c";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            color: var(--primary);
+            position: absolute;
+            left: 0;
+        }
+        
+        .color-options {
+            margin-bottom: 25px;
+        }
+        
+        .color-option-title {
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        
+        .color-selector {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .color-circle {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+        
+        .color-circle:hover, .color-circle.active {
+            border-color: var(--dark);
+        }
+        
+        .quantity-selector {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+        
+        .quantity-btn {
+            width: 30px;
+            height: 30px;
+            background-color: #e9ecef;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        
+        .quantity-input {
+            width: 50px;
+            height: 30px;
+            text-align: center;
+            border: 1px solid #e9ecef;
+            margin: 0 5px;
+        }
+        
+        .action-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 12px 24px;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            flex: 1;
+        }
+        
+        .btn-primary:hover {
+            background-color: #2a74e5;
+        }
+        
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+            flex: 1;
+        }
+        
+        .btn-secondary:hover {
+            background-color: rgba(58, 134, 255, 0.1);
+        }
+        
+        .product-details {
+            margin-top: 50px;
+        }
+        
+        .tabs {
+            display: flex;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        
+        .tab {
+            padding: 10px 20px;
+            cursor: pointer;
+            font-weight: 600;
+            position: relative;
+        }
+        
+        .tab.active {
+            color: var(--primary);
+        }
+        
+        .tab.active:after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--primary);
+        }
+        
+        .tab.highlight {
+            outline: rgb(0, 0, 0)  ;
+            outline-offset: 1px;
+        }
+        
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        .specs-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .specs-table tr:nth-child(even) {
+            background-color: rgba(0,0,0,0.02);
+        }
+        
+        .specs-table th, .specs-table td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+        
+        .specs-table th {
+            width: 30%;
+            color: var(--gray);
+            font-weight: 500;
+        }
+        
+        .review {
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+        
+        .review-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        
+        .review-author {
+            font-weight: 600;
+        }
+        
+        .review-date {
+            color: var(--gray);
+            font-size: 14px;
+        }
+        
+        .related-products {
+            margin-top: 50px;
+        }
+        
+        .related-title {
+            font-size: 22px;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        
+        .related-item {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+        
+        .related-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .related-item-image {
+            width: 100%;
+            height: 150px;
+            object-fit: contain;
+            background-color: white;
+            padding: 15px;
+        }
+        
+        .related-item-info {
+            padding: 15px;
+        }
+        
+        .related-item-title {
+            font-size: 16px;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+        
+        .related-item-price {
+            color: var(--primary);
+            font-weight: 700;
+        }
+        
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 30px 0;
+            margin-top: 50px;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        
+        .footer-column {
+            flex: 1;
+            min-width: 200px;
+        }
+        
+        .footer-title {
+            font-size: 18px;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+            list-style: none;
+        }
+        
+        .footer-links a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255,255,255,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        
+        .social-icon:hover {
+            background-color: var(--primary);
+        }
+        
+        @media (max-width: 768px) {
+            .product-container {
+                flex-direction: column;
+            }
+            
+            .main-image {
+                height: 300px;
+            }
+            
+            .action-buttons {
+                flex-direction: column;
+            }
+            
+            .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <img src="V logo.png" alt="Victorinox Logo">
+                Victorinox
+            </div>
+    <div class="header-icons" style="font-size: 20px; position: absolute; top: 40px; right: 180px;">
+    <i class="fas fa-search" title="Search"></i>
+    <i class="fas fa-heart" title="Wishlist" style="margin-left:15px;"></i>
+    <i class="fas fa-shopping-cart" title="Cart" style="margin-left:15px;"></i>
+    <i class="fas fa-user" title="Account" style="margin-left:15px;"></i>
+</div>
+
+        </header>
+        
+        <div class="product-container">
+            <div class="product-gallery">
+                <img src="https://m.media-amazon.com/images/I/71UBqIw8nAL._SX679_.jpg" alt="Front view of Victorinox" class="main-image" id="mainImage">
+                
+                <div class="thumbnail-container">
+                    <img src="https://m.media-amazon.com/images/I/71UBqIw8nAL._SX679_.jpg" alt="Front view of Victorinox" class="thumbnail active" onclick="changeImage(this)">
+                    <img src="https://m.media-amazon.com/images/I/71aKzs0fPLL._SX679_.jpg" alt="Slide profile showing sleek Victorinox Watch design" class="thumbnail" onclick="changeImage(this)">
+                    <img src="https://m.media-amazon.com/images/I/81cffYSMMGL._SX679_.jpg" alt="Side view of Victorinox Watch" class="thumbnail" onclick="changeImage(this)">
+                    <img src="https://m.media-amazon.com/images/I/81LzplvlCJL._SX679_.jpg" alt="Back view of Victorinox Watch" class="thumbnail" onclick="changeImage(this)">
+                </div>
+            </div>
+            
+            <div class="product-info">
+                <h2 class="product-title">Victorinox Analogue Men's Watch (Black Dial)</h2>
+                <div class="product-brand">by Victorinox</div>
+                <div class="product-price">₹61,830</div>
+                <div class="product-rating">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <div class="review-count">142 reviews</div>
+                </div>
+                
+                <p class="product-description">
+                    Command time in style with the Victorinox Analogue Men’s Watch. Featuring a bold black dial, precision Swiss quartz movement, and durable stainless-steel construction, it blends rugged reliability with refined design. The scratch-resistant sapphire crystal and water resistance ensure it’s ready for any occasion.
+                </p>
+                
+                <ul class="features-list">
+                    <li>Scratch-resistant sapphire crystal for lasting clarity</li>
+                    <li>Durable stainless-steel case with bold black dial</li>
+                    <li>Water-resistant design for everyday versatility</li>
+                    <li>Precision Swiss quartz movement for reliable timekeeping</li>
+                    <li>Timeless style paired with rugged durability</li>
+                </ul>
+                
+                <div class="quantity-selector">
+                    <button class="quantity-btn" onclick="updateQuantity(false)">-</button>
+                    <input type="text" class="quantity-input" value="1" id="quantityInput">
+                    <button class="quantity-btn" onclick="updateQuantity(true)">+</button>
+                </div>
+                
+                <div class="action-buttons">
+                    <button class="btn btn-primary" onclick="showAlert()">Add to Cart</button>
+                    <button class="btn btn-secondary" onclick="showConfirm()">Buy Now</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="product-details">
+            <div class="tabs">
+                <div class="tab active" onclick="openTab(event, 'details')">Product Details</div>
+                <div class="tab" onclick="openTab(event, 'specs')">Specifications</div>
+                <div class="tab highlight" onclick="openTab(event, 'reviews')">Reviews (142)</div>
+            </div>
+            
+            <div id="details" class="tab-content active">
+                <p>Experience uncompromising precision with the Victorinox Analogue Men’s Watch. Crafted with Swiss expertise, every detail is engineered for accuracy, durability, and timeless style.</p>
+                <p>The bold black dial with luminous hands and markers ensures clear readability in any light, while the scratch-resistant sapphire crystal keeps your watch looking pristine. Water resistance up to 100 meters means it’s ready for both everyday wear and adventure.</p>
+                <p>Designed for lasting comfort, the stainless-steel bracelet offers a secure, tailored fit, making it the perfect companion for any occasion.</p>
+            </div>
+            
+            <div id="specs" class="tab-content">
+                <table class="specs-table">
+                    <tr>
+                        <th>Brand</th>
+                        <td>Victorinox</td>
+                    </tr>
+                    <tr>
+                        <th>Model</th>
+                        <td>Analogue Men’s Watch (Black Dial)</td>
+                    </tr>
+                    <tr>
+                        <th>Movement</th>
+                        <td>Swiss quartz for precise timekeeping</td>
+                    </tr>
+                    <tr>
+                        <th>Case Diameter</th>
+                        <td>42mm stainless steel</td>
+                    </tr>
+                    <tr>
+                        <th>Crystal</th>
+                        <td>Scratch-resistant sapphire</td>
+                    </tr>
+                    <tr>
+                        <th>Dial</th>
+                        <td>Up to 100 meters (10 ATM)</td>
+                    </tr>
+                    <tr>
+                        <th>Water Resistance</th>
+                        <td>30 hours (ANC on)</td>
+                    </tr>
+                    <tr>
+                        <th>Strap</th>
+                        <td> Stainless steel bracelet with secure clasp</td>
+                    </tr>
+                    <tr>
+                        <th>Weight</th>
+                        <td>5.3 oz (150g)</td>
+                    </tr>
+                    <tr>
+                        <th>Included Accessories</th>
+                        <td>Presentation box, warranty card, instruction manual</td>
+                    </tr>
+                </table>
+            </div>
+            
+            <div id="reviews" class="tab-content">
+                <div class="review">
+                    <div class="review-header">
+                        <div class="review-author">Michael T.</div>
+                        <div class="review-date">March 15, 2023</div>
+                    </div>
+                    <div class="product-rating">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p>Excellent craftsmanship and very comfortable to wear. Keeps perfect time and feels solid on the wrist.</p>
+                </div>
+                
+                <div class="review">
+                    <div class="review-header">
+                        <div class="review-author">Sarah J.</div>
+                        <div class="review-date">February 28, 2023</div>
+                    </div>
+                    <div class="product-rating">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+                    <p>Love the design and precision. The watch performs exactly as described. My only small note is that the bracelet could be a bit more adjustable for smaller wrists.</p>
+                </div>
+                
+                <button class="btn btn-secondary" style="margin-top: 20px;">Write a Review</button>
+            </div>
+        </div>
+        
+        <div class="related-products">
+            <h3 class="related-title">You May Also Like</h3>
+            <div class="related-grid">
+                <div class="related-item">
+                    <img src="https://images-eu.ssl-images-amazon.com/images/I/41HqK5Wp3NL._AC_SR185,210,0,C_BR3_.jpg" alt="T-shirt" class="related-item-image">
+                    <div class="related-item-info">
+                        <div class="related-item-title">UNITED COLORS OF BENETTON Polo T Shirt</div>
+                        <div class="related-item-price"> ₹1,649</div>
+                    </div>
+                </div>
+                
+                <div class="related-item">
+                    <img src="https://m.media-amazon.com/images/I/612Ib2Jai3L._SX679_.jpg" alt="Cargo Jeans" class="related-item-image">
+                    <div class="related-item-info">
+                        <div class="related-item-title">Urbano Fashion Men's Regular Fit Washed Cargo Jeans with 6 Pockets Stretchable</div>
+                        <div class="related-item-price"> ₹1,022</div>
+                    </div>
+                </div>
+                
+                <div class="related-item">
+                    <img src="https://m.media-amazon.com/images/I/616GSgcZoqL._SY695_.jpg" alt="ASICS Unisex Skyhand Og Sneaker" class="related-item-image">
+                    <div class="related-item-info">
+                        <div class="related-item-title">ASICS Unisex Skyhand Og Sneaker</div>
+                        <div class="related-item-price"> ₹7,199</div>
+                    </div>
+                </div>
+                
+                <div class="related-item">
+                    <img src="https://m.media-amazon.com/images/I/41aqD2S+SgL._SX38_SY50_CR,0,0,38,50_.jpg" alt="Mivi SuperPods Immersio" class="related-item-image">
+                    <div class="related-item-info">
+                        <div class="related-item-title">Mivi SuperPods Immersio</div>
+                        <div class="related-item-price"> ₹2,199</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h4 class="footer-title">Victorinox</h4>
+                    <p>Precision-crafted Swiss timepieces built to combine timeless style with unmatched durability.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h4 class="footer-title">Shop</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Headphones</a></li>
+                        <li><a href="#">Earbuds</a></li>
+                        <li><a href="#">Speakers</a></li>
+                        <li><a href="#">Accessories</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4 class="footer-title">Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Shipping</a></li>
+                        <li><a href="#">Returns</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4 class="footer-title">Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Press</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Thumbnail image changer
+        function changeImage(element) {
+            const mainImage = document.getElementById('mainImage');
+            const thumbnails = document.querySelectorAll('.thumbnail');
+            
+            // Update main image source (in a real scenario this would be a different high-res image)
+            mainImage.src = element.src.replace('80x80', '600x400');
+            mainImage.alt = element.alt;
+            
+            // Update active thumbnail
+            thumbnails.forEach(thumb => thumb.classList.remove('active'));
+            element.classList.add('active');
+        }
+        
+        function updateQuantity(increase) {
+            const input = document.getElementById('quantityInput');
+            let value = parseInt(input.value);
+            
+            if (increase) {
+                value = value < 10 ? value + 1 : 10;
+            } else {
+                value = value > 1 ? value - 1 : 1;
+            }
+            
+            input.value = value;
+        }
+        
+        // Tab system
+        function openTab(evt, tabName) {
+            const tabContents = document.querySelectorAll('.tab-content');
+            const tabs = document.querySelectorAll('.tab');
+            
+            // Hide all tab content
+            tabContents.forEach(content => content.classList.remove('active'));
+            
+            // Remove active class from all tabs
+            tabs.forEach(tab => tab.classList.remove('active'));
+            
+            // Show the current tab
+            document.getElementById(tabName).classList.add('active');
+            
+            // Add active class to the button that opened the tab
+            evt.currentTarget.classList.add('active');
+        }
+
+        function showAlert() {
+    alert("Item added to cart!");
+}
+
+function showConfirm() {
+    if (confirm("Are you sure you want to buy this item?")) {
+        alert("Purchase confirmed!");
+    } else {
+        alert("Purchase cancelled.");
+    }
+}
+    </script>
+</body>
+</html>
